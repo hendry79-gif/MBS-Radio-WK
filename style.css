@@ -1,0 +1,66 @@
+/* Algemene instellingen */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+#video-background {
+    position: fixed;
+    inset: 0;
+    background: url('Foto1 WK.jpg') no-repeat center center;
+    background-size: 100% 56,25%;
+    z-index: -1;
+}
+
+
+/* Koppen */
+h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: black;              /* zwarte tekst */
+  text-shadow: none;         /* oude schaduw weghalen */
+  -webkit-text-stroke: 1px white; /* witte rand */
+}
+
+#playPauseBtn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+#playPauseBtn:hover {
+  background: #444;
+}
+
+/* Audio speler */
+audio, #radioPlayer {
+  margin-top: 15px;
+  outline: none;
+}
+
+/* Dropdown styling */
+#radioSelect {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  background: #222;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+#radioSelect:hover {
+  background: #444;
+}

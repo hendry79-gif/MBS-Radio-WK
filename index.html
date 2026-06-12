@@ -68,7 +68,7 @@
           fetch("https://api.rss2json.com/v1/api.json?rss_url=https://feeds.nos.nl/nosvoetbal")
             .then(response => response.json())
             .then(data => {
-              let items = data.items.slice(0, 5);
+              let items = data.items.slice(0, 3);
               let list = document.getElementById("nos-feed");
               list.innerHTML = ""; // leegmaken
               items.forEach(item => {

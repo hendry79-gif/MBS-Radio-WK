@@ -29,8 +29,16 @@ h1 {
   -webkit-text-stroke: 1px white; /* witte rand */
 }
 
-#playPauseBtn {
+/* Radio controls container */
+.radio-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
+}
+
+#playPauseBtn {
   padding: 8px 14px;
   font-size: 1rem;
   border: none;
@@ -89,7 +97,6 @@ audio, #radioPlayer {
   border-radius: 8px;
   border: none;
   font-size: 1rem;
-  margin-top: 10px;
   cursor: pointer;
   background: #222;
   color: white;

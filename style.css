@@ -50,6 +50,39 @@ audio, #radioPlayer {
   outline: none;
 }
 
+.nos-widget {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 15;
+  width: 700px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+}
+.nos-widget h3 {
+  margin-top: 0;
+  font-size: 3rem;
+}
+.nos-widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nos-widget li {
+  margin: 5px 0;
+}
+.nos-widget a {
+  color: white;
+  text-decoration: none;
+}
+.nos-widget a:hover {
+  text-decoration: underline;
+}
+
 /* Dropdown styling */
 #radioSelect {
   padding: 8px 12px;

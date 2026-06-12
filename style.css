@@ -100,7 +100,7 @@ audio, #radioPlayer {
   max-height: 300px;
   bottom: 20px !important;
 }
-.ranking-widget h3 {
+.ranking-widget h4 {
   font-size: 2rem;
 }
 .ranking-widget li {

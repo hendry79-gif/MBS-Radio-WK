@@ -13,7 +13,7 @@ body, html {
     position: fixed;
     inset: 0;
     background-image: url('Foto1 WK.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;

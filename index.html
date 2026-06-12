@@ -9,7 +9,6 @@
 
       <!-- Achtergrondafbeeldingen -->
   <div id="video-background"></div>
-        loadvideo-background();
   
   <!-- NOS Nieuws Widget (links onder) -->
   <div class="nos-widget">
@@ -63,7 +62,8 @@
             radioPlayer.pause();
           }
         });
-                function loadNosNieuws() {
+        
+        function loadNosNieuws() {
           fetch("https://api.rss2json.com/v1/api.json?rss_url=https://feeds.nos.nl/nosvoetbal")
             .then(response => response.json())
             .then(data => {
@@ -75,8 +75,15 @@
                 li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
                 list.appendChild(li);
               });
-            });
+            })
+            .catch(error => console.error('Fout bij laden NOS nieuws:', error));
         }
+        
+        // Laad NOS nieuws bij pagina laden
+        loadNosNieuws();
+        
+        // Herlaad elke 5 minuten
+        setInterval(loadNosNieuws, 5 * 60 * 1000);
       </script>
     </section>
   </div>

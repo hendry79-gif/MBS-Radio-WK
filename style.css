@@ -13,7 +13,7 @@ body, html {
 #video-background {
     position: fixed;
     inset: 0;
-    background: url('Foto1 WK.jpg') no-repeat center center;
+    background: url('Foto1 WK.png') no-repeat center center;
     background-size: 100% 56,25%;
     z-index: -1;
 }

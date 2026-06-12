@@ -16,6 +16,11 @@
     <ul id="nos-feed"></ul>
   </div>
   
+  <!-- Ranking Widget (rechts onder) -->
+  <div class="nos-widget ranking-widget">
+    <ul id="ranking-feed"></ul>
+  </div>
+  
   <!-- Hoofdcontent en radio -->
   <div class="content">
     <section>
@@ -85,6 +90,29 @@
         
         // Herlaad elke 5 minuten
         setInterval(loadNosNieuws, 5 * 60 * 1000);
+        
+        // Ranking data - Pas deze aan met de actuele gegevens van voetbalpoules.nl/poule/315788/ranglijst
+        const rankingData = [
+          { pos: '1', naam: 'FC_Schwalbe', punten: '26 pts' },
+          { pos: '2', naam: 'pohhh', punten: '19 pts' },
+          { pos: '3', naam: 'Pinchhitter FM', punten: '18 pts' },
+          { pos: '4', naam: 'De Wisselvalligen', punten: '14 pts' },
+          { pos: '5', naam: 'Sokkie121', punten: '10 pts' }
+        ];
+        
+        function loadRanking() {
+          const list = document.getElementById('ranking-feed');
+          list.innerHTML = '';
+          
+          rankingData.forEach(item => {
+            let li = document.createElement('li');
+            li.innerHTML = `<strong>#${item.pos}</strong> ${item.naam} - ${item.punten}`;
+            list.appendChild(li);
+          });
+        }
+        
+        // Laad ranking bij pagina laden
+        loadRanking();
       </script>
     </section>
   </div>

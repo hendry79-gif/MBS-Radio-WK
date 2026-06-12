@@ -91,6 +91,21 @@ audio, #radioPlayer {
   text-decoration: underline;
 }
 
+/* Ranking Widget (rechts onder, zelfde stijl als nos-widget) */
+.ranking-widget {
+  left: auto !important;
+  right: 20px !important;
+  width: 200px;
+  max-height: 300px;
+}
+.ranking-widget h3 {
+  font-size: 2rem;
+}
+.ranking-widget li {
+  font-size: 0.95rem;
+  text-align: left;
+}
+
 /* Dropdown styling */
 #radioSelect {
   padding: 8px 12px;

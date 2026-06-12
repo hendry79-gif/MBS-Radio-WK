@@ -12,7 +12,7 @@ body, html {
 #video-background {
     position: fixed;
     inset: 0;
-    background-image: url('Foto1 WK.webp');
+    background-image: url('Foto1WK.webp');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

@@ -93,10 +93,12 @@ audio, #radioPlayer {
 
 /* Ranking Widget (rechts onder, zelfde stijl als nos-widget) */
 .ranking-widget {
+  position: fixed !important;
   left: auto !important;
   right: 20px !important;
   width: 200px;
   max-height: 300px;
+  bottom: 20px !important;
 }
 .ranking-widget h3 {
   font-size: 2rem;

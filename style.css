@@ -9,15 +9,16 @@ body, html {
   overflow: hidden;
 }
 
-
 #video-background {
     position: fixed;
     inset: 0;
-    background: url('Foto1 WK.png') no-repeat center center;
-    background-size: 100% 56,25%;
+    background-image: url('Foto1 WK.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     z-index: -1;
 }
-
 
 /* Koppen */
 h1 {

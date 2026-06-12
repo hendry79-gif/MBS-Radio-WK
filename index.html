@@ -19,32 +19,33 @@
   <!-- Hoofdcontent en radio -->
   <div class="content">
     <section>
-      <select id="radioSelect">
-        <!-- https://streamurl.link/ -->
-        <option value="https://22333.live.streamtheworld.com/RADIO538.mp3">Radio 538</option>
-        <option value="https://23603.live.streamtheworld.com/100PNL_MP3_SC">100% NL</option>
-        <option value="https://radiostreamfm.com/listen/dolfijn_97.3_fm/radio.mp3">Dolfijn FM</option>
-        <option value="https://stream.gigantfm.nl/gigantfm">Gigant FM</option>
-        <option value="https://icecast-qmusicnl-cdp.triple-it.nl/Joe_nl.mp3">JOE</option>
-        <option value="https://icecast.omroep.nl/radio5-bb-mp3">Radio 5</option>
-        <option value="https://22333.live.streamtheworld.com/RADIO10.mp3">Radio 10</option>
-        <option value="https://22593.live.streamtheworld.com/VERONICA.mp3">Radio Veronica</option>
-        <option value="https://22333.live.streamtheworld.com/SKYRADIO.mp3">Sky Radio</option>
-        <option value="https://stream.tukkerfm.nl/tukkerfm">Tukker FM</option>
-        <option value="https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_live.mp3">Qmusic</option>
-        <option value="https://20043.live.streamtheworld.com/SLAM_MP3_SC">Slam!</option>
-        <option value="https://25293.live.streamtheworld.com/WEB16_MP3_SC">Slam! Housuh in de Pauzuh</option>
-        <option value="http://stream.antenne.de/antenne/stream/mp3">ANTENNE BAYERN</option>
-        <option value="https://radiovm1.fluidstream.eu/radiovm1.mp3">Radio VM1</option>
-        <option value="https://live.u1-radio.at/u1-tirol-live/">U1 Tirol</option>
-        <option value="http://topcongofm2.ice.infomaniak.ch/topcongofm2-96.mp3">Top Congo FM</option>
-      </select>
-      <br><br>
+      <div class="radio-controls">
+        <select id="radioSelect">
+          <!-- https://streamurl.link/ -->
+          <option value="https://22333.live.streamtheworld.com/RADIO538.mp3">Radio 538</option>
+          <option value="https://23603.live.streamtheworld.com/100PNL_MP3_SC">100% NL</option>
+          <option value="https://radiostreamfm.com/listen/dolfijn_97.3_fm/radio.mp3">Dolfijn FM</option>
+          <option value="https://stream.gigantfm.nl/gigantfm">Gigant FM</option>
+          <option value="https://icecast-qmusicnl-cdp.triple-it.nl/Joe_nl.mp3">JOE</option>
+          <option value="https://icecast.omroep.nl/radio5-bb-mp3">Radio 5</option>
+          <option value="https://22333.live.streamtheworld.com/RADIO10.mp3">Radio 10</option>
+          <option value="https://22593.live.streamtheworld.com/VERONICA.mp3">Radio Veronica</option>
+          <option value="https://22333.live.streamtheworld.com/SKYRADIO.mp3">Sky Radio</option>
+          <option value="https://stream.tukkerfm.nl/tukkerfm">Tukker FM</option>
+          <option value="https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_live.mp3">Qmusic</option>
+          <option value="https://20043.live.streamtheworld.com/SLAM_MP3_SC">Slam!</option>
+          <option value="https://25293.live.streamtheworld.com/WEB16_MP3_SC">Slam! Housuh in de Pauzuh</option>
+          <option value="http://stream.antenne.de/antenne/stream/mp3">ANTENNE BAYERN</option>
+          <option value="https://radiovm1.fluidstream.eu/radiovm1.mp3">Radio VM1</option>
+          <option value="https://live.u1-radio.at/u1-tirol-live/">U1 Tirol</option>
+          <option value="http://topcongofm2.ice.infomaniak.ch/topcongofm2-96.mp3">Top Congo FM</option>
+        </select>
+        <button id="playPauseBtn">⏯ Play/Pause</button>
+      </div>
       <audio id="radioPlayer" autoplay>
         <source src="https://22333.live.streamtheworld.com/RADIO538.mp3" type="audio/mpeg">
         Je browser ondersteunt geen audio.
       </audio>
-      <button id="playPauseBtn">⏯ Play/Pause</button>
       <script>
         // Radio functionaliteit
         const radioSelect = document.getElementById('radioSelect');

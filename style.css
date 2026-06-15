@@ -73,7 +73,7 @@ audio, #radioPlayer {
 }
 .nos-widget h3 {
   margin-top: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .nos-widget ul {
   list-style: none;
@@ -81,7 +81,9 @@ audio, #radioPlayer {
   margin: 0;
 }
 .nos-widget li {
-  margin: 5px 0;
+  font-size: 0.95rem;
+  text-align: left;
+  margin: 3px 0;
 }
 .nos-widget a {
   color: white;
@@ -100,11 +102,8 @@ audio, #radioPlayer {
   max-height: 300px;
   bottom: 20px !important;
 }
-.ranking-widget h3 {
-  font-size: 2rem;
-  margin: 0 0 5px 0;
-}
 .ranking-widget h4 {
+  font-size: 1.5rem;
   margin: 0 0 5px 0;
 }
 .ranking-widget ul {

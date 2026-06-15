@@ -102,10 +102,20 @@ audio, #radioPlayer {
 }
 .ranking-widget h3 {
   font-size: 2rem;
+  margin: 0 0 5px 0;
+}
+.ranking-widget h4 {
+  margin: 0 0 5px 0;
+}
+.ranking-widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .ranking-widget li {
   font-size: 0.95rem;
   text-align: left;
+  margin: 3px 0;
 }
 
 /* Dropdown styling */

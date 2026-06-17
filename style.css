@@ -7,22 +7,16 @@ body, html {
   color: white;
   text-align: center;
   overflow: hidden;
-  background-color: #2b6f3a; /* fallback groene achtergrond voor gebieden waar afbeelding niet dekt */
 }
 
 #video-background {
     position: fixed;
     inset: 0;
-    /* Gebruik eerst webp (kleiner) en png als fallback. De linear-gradient bovenaan fungeert als groene overlay zonder blend-mode.
-       Zorg dat de paden/namen overeenkomen met de daadwerkelijke bestandsnamen in de repo of public map. */
-    background-image: linear-gradient(rgba(43,111,58,0.35), rgba(43,111,58,0.35)), url('FotoWK.webp'), url('FotoWK.png');
-    background-size: cover; /* vul de hele achtergrond zodat er geen witte randen meer zijn */
+    background-image: url('FotoWK.png');  /* Verander 'FotoWK.webp' naar 'FotoWK.png' */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: rgba(43,111,58,1); /* extra groene basiskleur als fallback */
-    /* background-blend-mode is verwijderd zodat de afbeelding niet volledig wordt weggemengd als deze niet laadt */
-    filter: brightness(0.98) saturate(1.05);
     z-index: -1;
 }
 
@@ -30,9 +24,9 @@ body, html {
 h1 {
   font-size: 5rem;
   margin-bottom: 20px;
-  color: white;              /* witte tekst voor betere leesbaarheid op donkere/gekleurde achtergrond */
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* subtiele schaduw voor contrast */
-  -webkit-text-stroke: 0; /* geen witte rand meer */
+  color: black;              /* zwarte tekst */
+  text-shadow: none;         /* oude schaduw weghalen */
+  -webkit-text-stroke: 1px white; /* witte rand */
 }
 
 /* Radio controls container */
@@ -49,13 +43,13 @@ h1 {
   font-size: 1rem;
   border: none;
   border-radius: 8px;
-  background: rgba(0,0,0,0.6);
+  background: #222;
   color: white;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 #playPauseBtn:hover {
-  background: rgba(0,0,0,0.75);
+  background: #444;
 }
 
 /* Audio speler */
@@ -131,10 +125,10 @@ audio, #radioPlayer {
   border: none;
   font-size: 1rem;
   cursor: pointer;
-  background: rgba(0,0,0,0.6);
+  background: #222;
   color: white;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 #radioSelect:hover {
-  background: rgba(0,0,0,0.75);
+  background: #444;
 }

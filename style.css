@@ -13,13 +13,15 @@ body, html {
 #video-background {
     position: fixed;
     inset: 0;
-    background-image: url('FotoWK.png');  /* Verander 'FotoWK.webp' naar 'FotoWK.png' */
+    /* Gebruik eerst webp (kleiner) en png als fallback. De linear-gradient bovenaan fungeert als groene overlay zonder blend-mode.
+       Zorg dat de paden/namen overeenkomen met de daadwerkelijke bestandsnamen in de repo of public map. */
+    background-image: linear-gradient(rgba(43,111,58,0.35), rgba(43,111,58,0.35)), url('FotoWK.webp'), url('FotoWK.png');
     background-size: cover; /* vul de hele achtergrond zodat er geen witte randen meer zijn */
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: rgba(43,111,58,1); /* extra groene basiskleur */
-    background-blend-mode: multiply; /* meng afbeelding met de groene kleur voor een gelijkmatigere look */
+    background-color: rgba(43,111,58,1); /* extra groene basiskleur als fallback */
+    /* background-blend-mode is verwijderd zodat de afbeelding niet volledig wordt weggemengd als deze niet laadt */
     filter: brightness(0.98) saturate(1.05);
     z-index: -1;
 }

@@ -7,16 +7,20 @@ body, html {
   color: white;
   text-align: center;
   overflow: hidden;
+  background-color: #2b6f3a; /* fallback groene achtergrond voor gebieden waar afbeelding niet dekt */
 }
 
 #video-background {
     position: fixed;
     inset: 0;
     background-image: url('FotoWK.png');  /* Verander 'FotoWK.webp' naar 'FotoWK.png' */
-    background-size: contain;
+    background-size: cover; /* vul de hele achtergrond zodat er geen witte randen meer zijn */
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: rgba(43,111,58,1); /* extra groene basiskleur */
+    background-blend-mode: multiply; /* meng afbeelding met de groene kleur voor een gelijkmatigere look */
+    filter: brightness(0.98) saturate(1.05);
     z-index: -1;
 }
 
@@ -24,9 +28,9 @@ body, html {
 h1 {
   font-size: 5rem;
   margin-bottom: 20px;
-  color: black;              /* zwarte tekst */
-  text-shadow: none;         /* oude schaduw weghalen */
-  -webkit-text-stroke: 1px white; /* witte rand */
+  color: white;              /* witte tekst voor betere leesbaarheid op donkere/gekleurde achtergrond */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* subtiele schaduw voor contrast */
+  -webkit-text-stroke: 0; /* geen witte rand meer */
 }
 
 /* Radio controls container */
@@ -43,13 +47,13 @@ h1 {
   font-size: 1rem;
   border: none;
   border-radius: 8px;
-  background: #222;
+  background: rgba(0,0,0,0.6);
   color: white;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 #playPauseBtn:hover {
-  background: #444;
+  background: rgba(0,0,0,0.75);
 }
 
 /* Audio speler */
@@ -125,10 +129,10 @@ audio, #radioPlayer {
   border: none;
   font-size: 1rem;
   cursor: pointer;
-  background: #222;
+  background: rgba(0,0,0,0.6);
   color: white;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 #radioSelect:hover {
-  background: #444;
+  background: rgba(0,0,0,0.75);
 }

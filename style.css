@@ -99,7 +99,7 @@ audio, #radioPlayer {
   position: fixed !important;
   left: auto !important;
   right: 20px !important;
-  width: 200px;
+  width: 240px;
   max-height: 300px;
   bottom: 20px !important;
 }

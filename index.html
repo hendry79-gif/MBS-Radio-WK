@@ -4,11 +4,72 @@
   <meta charset="UTF-8">
   <title>MBS Klazienaveen - Radio & Weer</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Achtergrond slides: fullscreen, 2x2 grid per slide */
+    #video-background {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+      background: #000;
+    }
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .bg-slide.active {
+      opacity: 1;
+    }
+    .bg-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* kleine overlay zodat content leesbaar blijft */
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+    /* Widgets en content moeten boven de achtergrond blijven */
+    .nos-widget, .content { position: relative; z-index: 1; }
+    .nos-widget { background: rgba(255,255,255,0.85); padding: 8px; border-radius: 6px; }
+    .ranking-widget { position: absolute; right: 10px; bottom: 10px; }
+    .nos-widget { position: absolute; left: 10px; bottom: 10px; }
+    .content { padding: 20px; }
+  </style>
 </head>
 <body>
 
       <!-- Achtergrondafbeeldingen -->
-  <div id="video-background"></div>
+  <div id="video-background">
+    <!-- Slide 1 -->
+    <div class="bg-slide" data-slide="1">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015732-569585695a/1-30.jpeg?ph=fbeea765da" alt="links boven">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015733-5a9a15a9a3/2-3.jpeg?ph=fbeea765da" alt="rechts boven">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015734-7c15b7c15c/3-64.jpeg?ph=fbeea765da" alt="links onder">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015735-9708897089/4-6.jpeg?ph=fbeea765da" alt="rechts onder">
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="bg-slide" data-slide="2">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015736-af134af136/5-47.jpeg?ph=fbeea765da" alt="links boven">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015742-c1f0ac1f0c/6-35.jpeg?ph=fbeea765da" alt="rechts boven">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015819-814f2814f4/7-07.jpeg?ph=fbeea765da" alt="links onder">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015820-81e4881e49/8-0.jpeg?ph=fbeea765da" alt="rechts onder">
+    </div>
+
+    <div class="bg-overlay" aria-hidden="true"></div>
+  </div>
   
   <!-- NOS Nieuws Widget (links onder) -->
   <div class="nos-widget">
@@ -118,6 +179,27 @@
         
         // Laad ranking bij pagina laden
         loadRanking();
+
+        // Achtergrond slides script
+        (function() {
+          const slides = document.querySelectorAll('#video-background .bg-slide');
+          if (!slides || slides.length === 0) return;
+
+          // Preload all images
+          const urls = Array.from(slides).flatMap(sl => Array.from(sl.querySelectorAll('img')).map(i => i.src));
+          urls.forEach(u => { const img = new Image(); img.src = u; });
+
+          let current = 0;
+          slides[current].classList.add('active');
+
+          // wissel elke 12 seconden (aanpasbaar)
+          const INTERVAL_MS = 12000;
+          setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+          }, INTERVAL_MS);
+        })();
       </script>
     </section>
   </div>

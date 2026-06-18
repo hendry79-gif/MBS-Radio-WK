@@ -5,7 +5,7 @@
   <title>MBS Klazienaveen - Radio & Weer</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Achtergrond slides: fullscreen, 2x2 grid per slide */
+    /* Achtergrond slides: fullscreen, 2 rijen x 6 kolommen grid (2 vertical x 6 horizontal) */
     #video-background {
       position: fixed;
       inset: 0;
@@ -18,8 +18,8 @@
       position: absolute;
       inset: 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr 1fr; /* 2 vertical */
       gap: 0;
       opacity: 0;
       transition: opacity 1s ease-in-out;
@@ -52,20 +52,20 @@
 
       <!-- Achtergrondafbeeldingen -->
   <div id="video-background">
-    <!-- Slide 1 -->
+    <!-- Eén slide met 12 afbeeldingen in 2x6 grid -->
     <div class="bg-slide" data-slide="1">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015732-569585695a/1-30.jpeg?ph=fbeea765da" alt="links boven">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015733-5a9a15a9a3/2-3.jpeg?ph=fbeea765da" alt="rechts boven">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015734-7c15b7c15c/3-64.jpeg?ph=fbeea765da" alt="links onder">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015735-9708897089/4-6.jpeg?ph=fbeea765da" alt="rechts onder">
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="bg-slide" data-slide="2">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015736-af134af136/5-47.jpeg?ph=fbeea765da" alt="links boven">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015742-c1f0ac1f0c/6-35.jpeg?ph=fbeea765da" alt="rechts boven">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015819-814f2814f4/7-07.jpeg?ph=fbeea765da" alt="links onder">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015820-81e4881e49/8-0.jpeg?ph=fbeea765da" alt="rechts onder">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015732-569585695a/1-30.jpeg?ph=fbeea765da" alt="1">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015733-5a9a15a9a3/2-3.jpeg?ph=fbeea765da" alt="2">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015734-7c15b7c15c/3-64.jpeg?ph=fbeea765da" alt="3">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015735-9708897089/4-6.jpeg?ph=fbeea765da" alt="4">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015736-af134af136/5-47.jpeg?ph=fbeea765da" alt="5">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015742-c1f0ac1f0c/6-35.jpeg?ph=fbeea765da" alt="6">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015819-814f2814f4/7-07.jpeg?ph=fbeea765da" alt="7">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015820-81e4881e49/8-0.jpeg?ph=fbeea765da" alt="8">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015821-a75d0a75d2/9-1.jpeg?ph=fbeea765da" alt="9">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015822-b22bbb22bc/10-5.jpeg?ph=fbeea765da" alt="10">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015828-12d5b12d5d/11-88.jpeg?ph=fbeea765da" alt="11">
+      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015817-7d8a07d8a2/12-9.jpeg?ph=fbeea765da" alt="12">
     </div>
 
     <div class="bg-overlay" aria-hidden="true"></div>

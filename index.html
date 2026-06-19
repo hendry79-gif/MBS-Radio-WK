@@ -4,101 +4,11 @@
   <meta charset="UTF-8">
   <title>MBS Klazienaveen - Radio & Weer</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Achtergrond slides:
-       - Slide 1: 2 rijen x 6 kolommen grid (2 vertical x 6 horizontal)
-       - Slide 2: volledige fullscreen afbeelding (FotoWK.png)
-    */
-    #video-background {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-      background: #000;
-    }
-    .bg-slide {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: 1fr 1fr; /* 2 vertical */
-      gap: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .bg-slide.active {
-      opacity: 1;
-    }
-    /* Specifieke regels voor de fullscreen slide */
-    .bg-slide.full {
-      /* the single image will span the whole area */
-    }
-    .bg-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* make the single image in the .full slide cover the entire grid */
-    .bg-slide.full img {
-      grid-column: 1 / -1;
-      grid-row: 1 / -1;
-    }
-
-    /* kleine overlay zodat content leesbaar blijft */
-    .bg-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.2);
-      pointer-events: none;
-    }
-    /* Widgets en content moeten boven de achtergrond blijven */
-    .nos-widget, .content { position: relative; z-index: 1; }
-    .nos-widget { background: rgba(255,255,255,0.85); padding: 8px; border-radius: 6px; }
-    .ranking-widget { position: absolute; right: 10px; bottom: 10px; }
-    .nos-widget { position: absolute; left: 10px; bottom: 10px; }
-    .content { padding: 20px; }
-
-    /* Responsive: op kleinere schermen minder kolommen zodat het niet te fijn wordt */
-    @media (max-width: 1200px) {
-      .bg-slide { grid-template-columns: repeat(4, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .bg-slide { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(6, 1fr); }
-    }
-    @media (max-width: 420px) {
-      .bg-slide { grid-template-columns: 1fr; grid-template-rows: repeat(12, 1fr); }
-    }
-  </style>
 </head>
 <body>
 
       <!-- Achtergrondafbeeldingen -->
-  <div id="video-background">
-    <!-- Slide 1: 12 images in 2x6 grid -->
-    <div class="bg-slide" data-slide="1">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015732-569585695a/1-30.jpeg?ph=fbeea765da" alt="1">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015733-5a9a15a9a3/2-3.jpeg?ph=fbeea765da" alt="2">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015734-7c15b7c15c/3-64.jpeg?ph=fbeea765da" alt="3">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015735-9708897089/4-6.jpeg?ph=fbeea765da" alt="4">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015736-af134af136/5-47.jpeg?ph=fbeea765da" alt="5">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015742-c1f0ac1f0c/6-35.jpeg?ph=fbeea765da" alt="6">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e8e422cb4feeff53b8/200015819-814f2814f4/7-07.jpeg?ph=fbeea765da" alt="7">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015820-81e4881e49/8-0.jpeg?ph=fbeea765da" alt="8">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015821-a75d0a75d2/9-1.jpeg?ph=fbeea765da" alt="9">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015822-b22bbb22bc/10-5.jpeg?ph=fbeea765da" alt="10">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015828-12d5b12d5d/11-88.jpeg?ph=fbeea765da" alt="11">
-      <img src="https://fbeea765da.clvaw-cdnwnd.com/743c100f5981d3a8e422cb4feeff53b8/200015817-7d8a07d8a2/12-9.jpeg?ph=fbeea765da" alt="12">
-    </div>
-
-    <!-- Slide 2: fullscreen FotoWK.png -->
-    <div class="bg-slide full" data-slide="2">
-      <img src="FotoWK.png" alt="FotoWK full screen">
-    </div>
-
-    <div class="bg-overlay" aria-hidden="true"></div>
-  </div>
+  <div id="video-background"></div>
   
   <!-- NOS Nieuws Widget (links onder) -->
   <div class="nos-widget">
@@ -185,14 +95,14 @@
         // Ranking data - Pas deze aan met de actuele gegevens van voetbalpoules.nl/poule/315788/ranglijst
         const rankingData = [
           
-          { pos: '1', naam: 'FC_Schwalbe', punten: '137 pts +21' },
-          { pos: '2', naam: 'Pinchhitter FM', punten: '127 pts +17' },
-          { pos: '3', naam: 'De Wisselvalligen', punten: '112 pts +22' },
-          { pos: '4', naam: 'Sokkie121', punten: '111 pts +27' },
-          { pos: '5', naam: 'Nonkel Frans', punten: '104 pts +18' },
-          { pos: '6', naam: 'Lokaal Talent', punten: '100 pts +24' },
-          { pos: '7', naam: 'pohhh', punten: '93 pts +17' },
-          { pos: '8', naam: 'leo pessi', punten: '41 pts +8' }
+          { pos: '1', naam: 'FC_Schwalbe', punten: '146 pts +19' },
+          { pos: '2', naam: 'Pinchhitter FM', punten: '146 pts +9' },
+          { pos: '3', naam: 'De Wisselvalligen', punten: '133 pts +21' },
+          { pos: '4', naam: 'Sokkie121', punten: '130 pts +19' },
+          { pos: '5', naam: 'Nonkel Frans', punten: '119 pts +19' },
+          { pos: '6', naam: 'Lokaal Talent', punten: '118 pts +14' },
+          { pos: '7', naam: 'pohhh', punten: '95 pts +2' },
+          { pos: '8', naam: 'leo pessi', punten: '55 pts +14' }
         ];
         
         function loadRanking() {
@@ -208,27 +118,6 @@
         
         // Laad ranking bij pagina laden
         loadRanking();
-
-        // Achtergrond slides script
-        (function() {
-          const slides = document.querySelectorAll('#video-background .bg-slide');
-          if (!slides || slides.length === 0) return;
-
-          // Preload all images
-          const urls = Array.from(slides).flatMap(sl => Array.from(sl.querySelectorAll('img')).map(i => i.src));
-          urls.forEach(u => { const img = new Image(); img.src = u; });
-
-          let current = 0;
-          slides[current].classList.add('active');
-
-          // wissel elke 12 seconden (aanpasbaar)
-          const INTERVAL_MS = 12000;
-          setInterval(() => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-          }, INTERVAL_MS);
-        })();
       </script>
     </section>
   </div>

@@ -7,17 +7,18 @@ body, html {
   color: white;
   text-align: center;
   overflow: hidden;
+
 }
 
 #video-background {
     position: fixed;
     inset: 0;
-    background-image: url('FotoWK.png');  /* Verander 'FotoWK.webp' naar 'FotoWK.png' */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
+    background-color: #CFE8CD;
 }
 
 /* Koppen */

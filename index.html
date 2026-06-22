@@ -7,8 +7,34 @@
 </head>
 <body>
 
-      <!-- Achtergrondafbeeldingen -->
+  <!-- Achtergrondafbeeldingen -->
   <div id="video-background"></div>
+  <script>
+    // Zet direct de eerste achtergrond, en wissel elke 50 seconden
+
+    const images = [
+      'FotoWK.png',
+      'FotoWK1.png',
+      'FotoWK2.png'
+    ];
+
+    let idx = 0;
+    const bg = document.getElementById('video-background');
+
+    function setBG() {
+      bg.style.backgroundImage = `url('${images[idx]}')`;
+    }
+
+    // start met eerste afbeelding
+    setBG();
+
+    // wissel elke 15 seconden
+    setInterval(() => {
+      idx = (idx + 1) % images.length;
+      setBG();
+    }, 15000);
+  </script>
+
   
   <!-- NOS Nieuws Widget (links onder) -->
   <div class="nos-widget">

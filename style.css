@@ -154,13 +154,13 @@ audio, #radioPlayer {
   text-align:right;
 }
 
-.trend {
-  font-weight:bold;
-  min-width:40px;
-}
-
 .trend.up {
     color: #00d84a;
+    font-weight: bold;
+}
+
+.trend.mid {
+    color: #999999;
     font-weight: bold;
 }
 
@@ -169,6 +169,7 @@ audio, #radioPlayer {
     font-weight: bold;
 }
 .trend {
+	color: #00d84a;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -182,12 +183,4 @@ audio, #radioPlayer {
 
 .trend svg {
     flex-shrink: 0;
-}
-
-.trend.up {
-    color: #00d84a;
-}
-
-.trend.down {
-    color: #ff3b30;
 }

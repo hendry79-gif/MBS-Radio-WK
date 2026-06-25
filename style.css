@@ -100,7 +100,7 @@ audio, #radioPlayer {
   position: fixed !important;
   left: auto !important;
   right: 20px !important;
-  width: 240px;
+  width: 320px;
   max-height: 300px;
   bottom: 20px !important;
 }
@@ -132,4 +132,62 @@ audio, #radioPlayer {
 }
 #radioSelect:hover {
   background: #444;
+}
+
+.ranking-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+}
+
+.ranking-left {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  text-align:left;
+}
+
+.ranking-right {
+  margin-left:auto;
+  min-width:90px;
+  text-align:right;
+}
+
+.trend {
+  font-weight:bold;
+  min-width:40px;
+}
+
+.trend.up {
+    color: #00d84a;
+    font-weight: bold;
+}
+
+.trend.down {
+    color: #ff3b30;
+    font-weight: bold;
+}
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    min-width: 55px;
+	    font-size: 0.65em;
+    font-weight: bold;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.trend svg {
+    flex-shrink: 0;
+}
+
+.trend.up {
+    color: #00d84a;
+}
+
+.trend.down {
+    color: #ff3b30;
 }

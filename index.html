@@ -121,14 +121,14 @@
         // Ranking data - Pas deze aan met de actuele gegevens van voetbalpoules.nl/poule/315788/ranglijst
         const rankingData = [
           
-          { pos: '1', naam: 'De Wisselvalligen', punten: '256 pts +22' },
-          { pos: '2', naam: 'Pinchhitter FM', punten: '254 pts +18' },
-          { pos: '3', naam: 'FC_Schwalbe', punten: '251 pts +28' },
-          { pos: '4', naam: 'Sokkie121', punten: '249 pts +20' },
-          { pos: '5', naam: 'Nonkel Frans', punten: '224 pts +12' },
-          { pos: '6', naam: 'Lokaal Talent', punten: '223 pts +14' },
-          { pos: '7', naam: 'pohhh', punten: '213 pts +28' },
-          { pos: '8', naam: 'leo pessi', punten: '158 pts +21' }
+          { pos: '1', naam: 'Sokkie121', 			punten: '348 pts ', dagscore: ' +99', stijging: 3 },
+          { pos: '2', naam: 'Pinchhitter FM', 		punten: '336 pts ', dagscore: ' +82', stijging: 0 },
+          { pos: '3', naam: 'De Wisselvalligen', 	punten: '332 pts ', dagscore: ' +76', stijging: -2 },
+          { pos: '4', naam: 'FC_Schwalbe', 			punten: '315 pts ', dagscore: ' +64', stijging: -1 },
+          { pos: '5', naam: 'pohhh', 				punten: '298 pts ', dagscore: ' +85', stijging: 2 },
+          { pos: '6', naam: 'Lokaal Talent',	 	punten: '292 pts ', dagscore: ' +69', stijging: 0 },
+          { pos: '7', naam: 'Nonkel Frans', 		punten: '291 pts ', dagscore: ' +67', stijging: -2 },
+          { pos: '8', naam: 'leo pessi', 			punten: '244 pts ', dagscore: ' +86', stijging: 0 }
         ];
         
         function loadRanking() {
@@ -137,7 +137,29 @@
           
           rankingData.forEach(item => {
             let li = document.createElement('li');
-            li.innerHTML = `<strong>#${item.pos}</strong> ${item.naam} - ${item.punten}`;
+
+            let trend = '';
+			
+if (item.stijging > 0) {
+  trend = `<span class="trend up">▲ +${item.stijging}</span>`;
+} else if (item.stijging < 0) {
+  trend = `<span class="trend down">▼ ${item.stijging}</span>`;
+} else {
+  trend = '0';
+}
+
+            li.innerHTML = `
+              <div class="ranking-row">
+<div class="ranking-left">
+  <strong>#${item.pos}</strong>
+  ${item.naam}
+  ${trend}
+</div>
+                <div class="ranking-right">
+                  ${item.punten} ${item.dagscore}
+                </div>
+              </div>`;
+
             list.appendChild(li);
           });
         }
